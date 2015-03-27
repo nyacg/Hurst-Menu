@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+		<title>Hurst Menu</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=high-dpi" />
+		<link rel='stylesheet' type='text/css' media='screen' href='./res/css/interface.css' />
+		<link rel='stylesheet' type='text/css' media='screen' href='./res/css/scroll-bars.css' />
+		<link rel='stylesheet' type='text/css' media='screen' href='http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css' />
+
+		<meta name='description' content=''/>
+		<meta name='keywords' content=''>
+		
+		<link rel="apple-touch-icon" href="./res/img/icon.png"/>
+	</head>
+
+	<body>
+		<div class='page'>
+
+			<div class='top-bar'>
+				<div id='view-nav'><img src='./res/img/more.png'/></div>
+				<div class='title-bar'><h1>Hurst | Menu</h1></div>
+			</div>
+
+			<div class='lower'>
+
+				<div class='nav-pane'>
+					<div class='nav-scroll'>
+						<ul class='categories'>
+							<li class='title' id='set-year'>Set Year
+								<div class='more' id='set-year-box'>
+									<select id='years'>
+										<option value='shell'>Shell</option>
+										<option value='remove'>Remove</option>
+										<option value='fifth'>Fifth</option>
+										<option value='LVI'>Lower 6<sup>th</sup></option>
+										<option value='UVI'>Upper 6<sup>th</sup></option>
+									</select>
+									<div class='button' id='set-year-button'>
+										<a>Set Year</a>
+										<p class="top">currently unset</p>
+										<p class="bottom">click to change</p>
+									</div>
+									<span id='done'>done</span>
+								</div>
+							<div class='background'></div></li>
+							<li class='title active' id='menu'>Menu<div class='background'></div></li>
+							<li class='title' id='suggestions'>Suggestions<div class='background'></div></li>
+							<li class='title' id='help'>Help<div class='background'></div></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class='content'>
+					<div id='menuView' class="view">
+						<div class='nav-bar'>
+							<div class='left-arrow arrow'><img src='./res/img/back.png'/></div>
+							<div class='right-arrow arrow'><img src='./res/img/forward.png'/></div>
+							<div class='day-container'><p class='day long'></p></div>	
+						</div>
+
+						<img class='loading' id='loading-big' src='./res/img/ajax-loader.gif'/>
+						
+						<div class='menu lunch'>
+							<h2 class='meal-title' id='lunch-title'>Lunch</h2>
+							<ul id='lunch-menu'>
+								<lh class='menu-item lunch-item heading soup-heading'>Soup</lh>
+								<li class='menu-item lunch-item' id='soup-lunch'></li>
+								<lh class='menu-item lunch-item heading main-heading'>Mains</lh>
+								<li class='menu-item lunch-item' id='main_meat-lunch'></li>
+								<li class='menu-item lunch-item' id='main_fish-lunch'></li>
+								<li class='menu-item lunch-item' id='main_vegetarian-lunch'></li>
+								<lh class='menu-item lunch-item heading'>Vegetables</lh>
+								<li class='menu-item lunch-item' id='potato-lunch'></li>
+								<li class='menu-item lunch-item' id='veg_1-lunch'></li>
+								<li class='menu-item lunch-item' id='veg_2-lunch'></li>
+								<li class='menu-item lunch-item' id='veg_3-lunch'></li>
+								<lh class='menu-item lunch-item heading' id='alternative-lunch'></lh>
+								<li class='menu-item lunch-item' id='sauce_1-lunch'></li>
+								<li class='menu-item lunch-item' id='sauce_2-lunch'></li>
+								<lh class='menu-item lunch-item heading'>Dessert</lh>
+								<li class='menu-item lunch-item' id='dessert-lunch'></li>
+							</ul>
+						</div>
+
+						<div class='menu supper' id='supper-title'>
+							<h2 class='meal-title'>Supper</h2><span id='attending'><input type='checkbox' name='attending' value='attending' id='attendingCheckbox'><label for='attending'>Attending</label><em id='no-yeargroup'>No yeargroup set, please select 'Set Year' on the navigation pane</em></span>
+
+							<ul id='supper-menu'>
+								<lh class='menu-item supper-item heading soup-heading'>Soup</lh>
+								<li class='menu-item supper-item' id='soup-supper'></li>
+								<lh class='menu-item supper-item heading main-heading'>Mains</lh>
+								<li class='menu-item supper-item' id='main_meat-supper'></li>
+								<li class='menu-item supper-item' id='main_fish-supper'></li>
+								<li class='menu-item supper-item' id='main_vegetarian-supper'></li>
+								<li class='menu-item lunch-item' id='with'><i>with</i></li>
+								<li class='menu-item supper-item' id='staple-supper'></li>
+								<lh class='menu-item supper-item heading'>Vegetables</lh>
+								<li class='menu-item supper-item' id='veg_1-supper'></li>
+								<li class='menu-item supper-item' id='veg_2-supper'></li>
+								<lh class='menu-item supper-item heading' id='pasta-supper'>Pasta Sauce</lh>
+								<li class='menu-item supper-item' id='sauce_1-supper'></li>
+								<li class='menu-item supper-item' id='sauce_2-supper'></li>
+								<lh class='menu-item supper-item heading'>Dessert</lh>
+								<li class='menu-item supper-item' id='dessert-supper'></li>
+							</li>
+						</div>
+
+						<div class='notice' id='no-data'><p>No menu data avalible</p></div>
+					</div>
+
+					<div id='suggestionsView' class='view'>
+						<div id='contact-form' class='clearfix'>  
+							<p>Really enjoyed a meal, think something could be done better or want to see particular items on the menu? Let us know!</p>
+							<form>
+								<label for='name'>Name: </label>
+								<input type='text' id='name' class='suggestions-input' name='name' placeholder='type your name here' required='required' autofocus='autofocus' maxlength='30' />
+
+								<label for='email'>Email Address: </label>
+								<input type='email' id='email' class='suggestions-input' name='email' placeholder='please provide a valid hppc email address' required='required' maxlength='45' />	
+
+								<label for='message'>Feedback/Suggestion: </label>
+								<textarea id='message' class='suggestions-input' name='message' placeholder='Your message must be greater than 20 charcters' required='required' minlength='20'></textarea>
+							</form>
+
+							<ul id='errors'>
+								<li id='info'>There were some problems with your form submission:</li>
+							</ul>
+
+							<p id='success'>Thanks for your message! We will get back to you ASAP!</p>
+							
+							<div class='button' id='submit-feedback-button'><a>Send</a></div>
+
+						</div>
+					</div>
+
+					<div id='helpView' class='view'>
+						<p class="notice">View the user documentation <a href="./studentSystemUserDocumentation.pdf" target="_blank">here</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type='text/javascript' src='./res/js/jQuery.js'></script>
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+		
+		<script type='text/javascript' src='./res/js/jquery-ui.custom.min.js'></script>
+		<script type='text/javascript' src='./res/js/jquery.ui.touch.js'></script>
+		<script type='text/javascript' src='./res/js/touchSwipe.min.js'></script>
+
+		<script type='text/javascript' src='./res/js/interface.js'></script>
+	</body>
+</html>

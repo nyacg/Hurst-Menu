@@ -1,0 +1,139 @@
+form label {
+	margin-top: 15px;
+}
+
+.page {
+	max-width: 1020px;
+	padding: 0 20px 0 20px;
+	margin: 75px auto;
+}
+
+.left {
+	float: left;
+}
+
+.right: {
+	float: right;
+}
+
+.login-alert {
+	margin-top: 20px;
+	max-width: 500px;
+}
+
+.delete-alert {
+	margin-top: 20px;
+}
+
+.glyph-input {
+	margin-top: 1px;
+	margin-bottom: -1px !important;
+}
+
+.menu-upload-input, .menu-delete-input {
+	max-width: 400px;
+}
+
+.likes-input {
+	max-width: 250px;
+	margin: 0 20px 0 10px;
+}
+
+.left-form {
+	width: 40%;
+}
+
+.instructions-panel {
+	margin: 40px 0 0 40px;
+	width: 50%;
+}
+
+.change-week-buttons {
+	clear: both;
+	margin: 20px auto 5px 0;
+	width: 100%;
+}
+
+.clear {
+	clear: both;
+}
+
+.menu-panel {
+	width: 48%;
+	margin: 5px;
+	float: left;
+}
+
+.menu-panel-content {
+	padding: 10px;
+}
+
+#edit-menu-form .change-week-buttons {
+	margin-left: 6px;
+}
+
+#login-button {
+	margin-bottom: -2px;
+}
+
+#days-panel {
+	max-width: 280px;
+	margin-top: 30px;
+}
+
+#days-panel .has-switch {
+	float: right;
+	margin-left: 5px;
+}
+
+#days-panel label {
+	height: 29px;
+}
+
+#days {
+	padding: 10px 15px;
+}
+
+#confirmed-attendance-chart {
+	margin-right: -160px;
+}
+
+#date-form {
+	height: 40px;
+}
+
+#weeks-attendance-chart {
+	margin-left: -100px;
+}
+
+#save-menu-changes {
+	margin-left: 20px;
+}
+
+#submit_likes_parameters {
+	margin-top: 10px;
+}
+
+#likes-result {
+	margin-top: 40px;
+}
+
+#emails-label {
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 550px){
+	.menu-panel {
+		width: 100%;
+	}
+
+	#upload-menu-form {
+		width: 100%;
+	}
+
+	#instructions-panel {
+		margin-left: 0px;
+		width: 100%;
+	}
+}
